@@ -11,7 +11,7 @@ export default {
   name: 'HotelDetails',
   data() {
     return {
-      hotelsDetails: {},
+      hotelDetails: {},
     };
   },
   props: {
@@ -24,10 +24,19 @@ export default {
     fetchHotelDetails(id) {
       return HotelService.getHotel(id)
         .then((details) => {
-          this.hotelsDetails = details;
+          this.hotelDetails = details;
         });
     },
   },
+  watch: {
+    hotelId: {
+      immediate: true, 
+      handler (newId, oldId) {
+        // do your stuff
+        this.fetchHotelDetails();
+      }
+    }
+}
 
 };
 </script>
