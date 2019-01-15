@@ -1,21 +1,18 @@
 <template>
   <div>
-
+    {{ hotel.name}}
   </div>
 </template>
 
 <script>
 export default {
   name: 'singleHotel',
-  data() {
-    return {
-
-    };
+  props: {
+    hotel: Object,
   },
-  props:{
-    book: String
+  computed() {
+    
   },
-
 };
 </script>
 

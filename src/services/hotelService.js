@@ -5,6 +5,6 @@ export default {
     return Api.gett('/hotels');
   },
   getHotel(id) {
-    return Api.get(`/hotel/${id}`);
+    return Api.get(`/hotelDetails/${id}`);
   },
 };

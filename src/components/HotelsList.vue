@@ -8,7 +8,8 @@
 </template>
 
 <script>
-import SingleHotel from '@/components/SingleHotel';
+import SingleHotel from '@/components/SingleHotel.vue';
+import HotelService from '@/services/HotelService';
 
 export default {
   name: 'HotelsList',
@@ -19,6 +20,18 @@ export default {
     return {
       hotels: [],
     };
+  },
+  created() {
+    this.fetchHotels();
+  },
+  methods: {
+    fetchHotels() {
+      return HotelService.getHotels()
+        .then((hotels) => {
+          console.log(hotels);
+          this.hotels = hotels;
+        });
+    },
   },
 };
 </script>

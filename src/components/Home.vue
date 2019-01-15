@@ -1,13 +1,18 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-
+    <HotelsList />
   </div>
 </template>
 
 <script>
+import HotelsList from '@/components/HotelsList.vue';
+
 export default {
   name: 'Home',
+  components: {
+    HotelsList,
+  },
 };
 </script>
 
