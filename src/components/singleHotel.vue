@@ -1,6 +1,6 @@
 <template>
   <div>
-    {{ hotel.name}}
+    {{ hotel.name }}
   </div>
 </template>
 
@@ -10,9 +10,12 @@ export default {
   props: {
     hotel: Object,
   },
-  computed() {
-
+  created() {
+    console.log('Hotel', this.hotel);
   },
+  // computed() {
+
+  // },
 };
 </script>
 

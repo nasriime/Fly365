@@ -1,9 +1,9 @@
 <template>
   <div class="row">
+    <span>hotels list</span>
     <div v-for="(hotel, index) in hotels" :key="index" class="col-sm-4">
       <SingleHotel :hotel="hotel"/>
     </div>
-
   </div>
 </template>
 
@@ -21,16 +21,14 @@ export default {
       hotels: [],
     };
   },
-  created() {
+  mounted() {
     this.fetchHotels();
   },
   methods: {
-    fetchHotels() {
-      return HotelService.getHotels()
-        .then((hotels) => {
-          console.log(hotels);
-          this.hotels = hotels;
-        });
+    async fetchHotels() {
+      const response = await HotelService.getHotels();
+      console.log(response);
+      this.hotels = response.data;
     },
   },
 };

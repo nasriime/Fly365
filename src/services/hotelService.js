@@ -2,9 +2,9 @@ import Api from '@/services/Api';
 
 export default {
   getHotels() {
-    return Api.gett('/hotels');
+    return Api().get('/hotels');
   },
   getHotel(id) {
-    return Api.get(`/hotelDetails/${id}`);
+    return Api().get(`/hotelDetails/${id}`);
   },
 };

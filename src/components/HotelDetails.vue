@@ -1,14 +1,22 @@
 <template>
   <div>
-
+    <span>Hotels Details </span>
+    <Gallery />
+    <Reviews />
   </div>
 </template>
 
 <script>
 import HotelService from '@/services/HotelService';
+import Gallery from '@/components/Gallery.vue';
+import Reviews from '@/components/Reviews.vue';
 
 export default {
   name: 'HotelDetails',
+  components: {
+    Gallery,
+    Reviews,
+  },
   data() {
     return {
       hotelDetails: {},
@@ -17,26 +25,25 @@ export default {
   props: {
     hotelId: String,
   },
-  created() {
+  mounted() {
     this.fetchHotelDetails(this.hotelId);
   },
   methods: {
-    fetchHotelDetails(id) {
-      return HotelService.getHotel(id)
-        .then((details) => {
-          this.hotelDetails = details;
-        });
+    async fetchHotelDetails(id) {
+      const response = await HotelService.getHotel(id);
+      console.log(response);
+      this.hotelDetails = response.data;
     },
   },
   watch: {
     hotelId: {
-      immediate: true, 
-      handler (newId, oldId) {
-        // do your stuff
-        this.fetchHotelDetails();
-      }
-    }
-}
+      immediate: true,
+      handler(newId, oldId) {
+        console.log(oldId);
+        this.fetchHotelDetails(newId);
+      },
+    },
+  },
 
 };
 </script>

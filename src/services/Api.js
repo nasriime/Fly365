@@ -1,5 +1,10 @@
 import axios from 'axios';
 
 export default () => axios.create({
-  baseUrl: 'http://my-json-server.typicode.com/fly365com/code-challenge',
+  baseURL: 'http://my-json-server.typicode.com/fly365com/code-challenge',
+  withCredentials: false,
+  headers: {
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
 });
