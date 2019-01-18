@@ -2,7 +2,12 @@
   <div>
     <span v-if="!hotelID">Hotels Details loading..... </span>
     <div v-else>
-      <span> Hotels Details loaded id {{ hotelID }} </span>
+      <div>
+        <span>for</span>
+        <input type="number" @input="changeNights()" v-model="nights">
+        <span>Nights</span>
+      </div>
+      <div> Hotels Details loaded id {{ hotelID }} </div>
       <Gallery />
       <Reviews />
     </div>
@@ -22,6 +27,7 @@ export default {
   },
   data() {
     return {
+      nights: this.$store.state.nights,
       hotelDetails: {},
     };
   },
@@ -29,6 +35,9 @@ export default {
     async fetchHotelDetails(id) {
       const response = await HotelService.getHotel(id);
       this.hotelDetails = response.data;
+    },
+    changeNights() {
+      this.$store.commit('changeNightsNumber', this.nights);
     },
   },
   computed: {

@@ -1,6 +1,7 @@
 <template>
   <div>
     {{ hotel.name }}
+    {{ priceOfAllNights }} nights
   </div>
 </template>
 
@@ -10,12 +11,11 @@ export default {
   props: {
     hotel: Object,
   },
-  created() {
-    // console.log('Hotel', this.hotel);
+  computed: {
+    priceOfAllNights() {
+      return this.$store.state.nights * this.hotel.pricePerNight;
+    },
   },
-  // computed() {
-
-  // },
 };
 </script>
 
