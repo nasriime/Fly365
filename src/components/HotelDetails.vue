@@ -4,7 +4,7 @@
     <div v-else>
       <div>
         <span>for</span>
-        <input type="number" @input="changeNights()" v-model="nights">
+        <input type="number" min="0" @input="changeNights()" v-model="nights">
         <span>Nights</span>
       </div>
       <div> Hotel Details loaded id {{ hotelID }} </div>

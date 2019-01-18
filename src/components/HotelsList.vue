@@ -1,7 +1,10 @@
 <template>
-  <div class="row pt-5">
-    <div v-for="(hotel, index) in hotels" :key="index" class="col-sm-4">
-      <SingleHotel :hotel="hotel"/>
+  <div>
+    <div v-if="!hotels">List of hotels Loading ....</div>
+    <div v-else class="row pt-5 mb-5">
+      <div v-for="(hotel, index) in hotels" :key="index" class="col-sm-4">
+        <SingleHotel :hotel="hotel"/>
+      </div>
     </div>
   </div>
 </template>
