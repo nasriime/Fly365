@@ -15,8 +15,8 @@
 
        <Pagination
       :total-pages="totalPages"
-      :total="reviews.length"
-      :per-page="3"
+      :total="totalReviews"
+      :per-page="limit"
       :current-page="currentPage"
       @pagechanged="onPageChange"/>
     </div>
@@ -35,6 +35,8 @@ export default {
     return {
       asc: false,
       currentPage: 1,
+      skip: 0,
+      limit: 3,
     };
   },
   components: {
@@ -45,14 +47,15 @@ export default {
   },
   computed: {
     orderedReviews() {
-      return _.orderBy(this.reviews, 'score', this.asc ? 'asc' : 'desc');
+      const reviews = _.orderBy(this.reviews, 'score', this.asc ? 'asc' : 'desc');
+      return reviews.slice(this.skip, this.limit);
     },
     totalPages() {
       return Math.ceil(this.reviews.length / 3);
     },
-    // filteredReviews() {
-    //   return this.orderedReviews().slice(0, 3);
-    // },
+    totalReviews() {
+      return this.reviews.length;
+    },
   },
   methods: {
     toggleSort() {
@@ -61,6 +64,8 @@ export default {
     onPageChange(page) {
       console.log(page);
       this.currentPage = page;
+      this.limit = page * 3;
+      this.skip = this.limit - 3;
     },
   },
 };
