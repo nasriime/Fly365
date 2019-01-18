@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img v-for="(image,index) in images" :key="index" :src="image.photo" alt="">
+    <img v-for="(item,index) in computedPictures" :key="index" :src="item.photo" alt="">
   </div>
 </template>
 
@@ -8,7 +8,12 @@
 export default {
   name: 'gallery',
   props: {
-    images: Array,
+    pictures: Array,
+  },
+  computed: {
+    computedPictures() {
+      return this.pictures;
+    },
   },
 };
 </script>

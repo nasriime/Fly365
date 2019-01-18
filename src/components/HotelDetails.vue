@@ -7,9 +7,9 @@
         <input type="number" @input="changeNights()" v-model="nights">
         <span>Nights</span>
       </div>
-      <div> Hotels Details loaded id {{ hotelID }} </div>
-      <Gallery />
-      <Reviews />
+      <div> Hotel Details loaded id {{ hotelID }} </div>
+      <Gallery :pictures="hotelDetails.pictures"/>
+      <Reviews :reviews="hotelDetails.reviews"/>
     </div>
   </div>
 </template>
