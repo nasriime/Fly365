@@ -47,8 +47,8 @@ export default {
   },
   computed: {
     orderedReviews() {
-      const reviews = _.orderBy(this.reviews, 'score', this.asc ? 'asc' : 'desc');
-      return reviews.slice(this.skip, this.limit);
+      const reviews = this.reviews.slice(this.skip, this.limit);
+      return _.orderBy(reviews, 'score', this.asc ? 'asc' : 'desc');
     },
     totalPages() {
       return Math.ceil(this.reviews.length / 3);

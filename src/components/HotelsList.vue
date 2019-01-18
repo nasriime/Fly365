@@ -1,6 +1,5 @@
 <template>
-  <div class="row">
-    <span>hotels list</span>
+  <div class="row pt-5">
     <div v-for="(hotel, index) in hotels" :key="index" class="col-sm-4">
       <SingleHotel :hotel="hotel"/>
     </div>
