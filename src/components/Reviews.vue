@@ -1,5 +1,9 @@
 <template>
   <div>
+    <div>
+      <span>Reviews</span>
+      <button @click="toggleSort">Toggle sort</button>
+    </div>
     <ul>
       <li v-for="(item, index) in orderedReviews" :key="index">
         <!-- {{ item.review }} -->
@@ -18,8 +22,7 @@ export default {
   name: 'Reviews',
   data() {
     return {
-      asc: true,
-      desc: false,
+      asc: false,
     };
   },
   components: {
@@ -30,11 +33,16 @@ export default {
   },
   computed: {
     orderedReviews() {
-      return _.orderBy(this.reviews, 'score');
+      return _.orderBy(this.reviews, 'score', this.asc ? 'asc' : 'desc');
     },
     // filteredReviews() {
     //   return this.orderedReviews().slice(0, 3);
     // },
+  },
+  methods: {
+    toggleSort() {
+       this.asc = !this.asc;
+    },
   },
 };
 </script>
