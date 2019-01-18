@@ -18,6 +18,12 @@ module.exports = {
         'state',
       ],
     }],
+    'prefer-destructuring': ['error', {
+      array: false,
+      object: false,
+    }, {
+      enforceForRenamedProperties: false,
+    }],
   },
   parserOptions: {
     parser: 'babel-eslint',

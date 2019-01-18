@@ -4,12 +4,16 @@
       <span>Reviews</span>
       <button @click="toggleSort">Toggle sort</button>
     </div>
-    <ul>
-      <li v-for="(item, index) in orderedReviews" :key="index">
-        <!-- {{ item.review }} -->
-        {{ item.score }}
-      </li>
-    </ul>
+    <div v-if="!reviews">reviews loading ......</div>
+    <div v-else>
+      <ul>
+        <li v-for="(item, index) in orderedReviews" :key="index">
+          <!-- {{ item.review }} -->
+          {{ item.score }}
+        </li>
+      </ul>
+    </div>
+
     <Pagination />
   </div>
 </template>
@@ -41,7 +45,7 @@ export default {
   },
   methods: {
     toggleSort() {
-       this.asc = !this.asc;
+      this.asc = !this.asc;
     },
   },
 };
