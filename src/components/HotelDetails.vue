@@ -1,8 +1,11 @@
 <template>
   <div>
-    <span>Hotels Details </span>
-    <Gallery />
-    <Reviews />
+    <span v-if="!hotelID">Hotels Details loading..... </span>
+    <div v-else>
+      <span> Hotels Details loaded id {{ hotelID }} </span>
+      <Gallery />
+      <Reviews />
+    </div>
   </div>
 </template>
 
@@ -22,26 +25,20 @@ export default {
       hotelDetails: {},
     };
   },
-  props: {
-    hotelId: String,
-  },
-  mounted() {
-    this.fetchHotelDetails(this.hotelId);
-  },
   methods: {
     async fetchHotelDetails(id) {
       const response = await HotelService.getHotel(id);
-      console.log(response);
       this.hotelDetails = response.data;
     },
   },
+  computed: {
+    hotelID() {
+      return this.$store.state.hotelID;
+    },
+  },
   watch: {
-    hotelId: {
-      immediate: true,
-      handler(newId, oldId) {
-        console.log(oldId);
-        this.fetchHotelDetails(newId);
-      },
+    hotelID(id) {
+      this.fetchHotelDetails(id);
     },
   },
 

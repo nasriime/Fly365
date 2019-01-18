@@ -27,8 +27,9 @@ export default {
   methods: {
     async fetchHotels() {
       const response = await HotelService.getHotels();
-      console.log(response);
       this.hotels = response.data;
+      const selectedID = this.hotels[0].id;
+      this.$store.commit('changeHotelID', selectedID);
     },
   },
 };

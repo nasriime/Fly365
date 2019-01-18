@@ -1,19 +1,19 @@
 <template>
   <div>
     <HotelsList />
-    <!-- <hotelsDetails /> -->
+    <hotelsDetails />
   </div>
 </template>
 
 <script>
 import HotelsList from '@/components/HotelsList.vue';
-// import HotelsDetails from '@/components/HotelDetails.vue';
+import HotelsDetails from '@/components/HotelDetails.vue';
 
 export default {
   name: 'Home',
   components: {
     HotelsList,
-    // HotelsDetails,
+    HotelsDetails,
   },
 };
 </script>

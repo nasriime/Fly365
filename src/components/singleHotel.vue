@@ -11,7 +11,7 @@ export default {
     hotel: Object,
   },
   created() {
-    console.log('Hotel', this.hotel);
+    // console.log('Hotel', this.hotel);
   },
   // computed() {
 
