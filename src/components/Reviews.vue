@@ -16,7 +16,7 @@
        <Pagination
       :total-pages="totalPages"
       :total="totalReviews"
-      :per-page="limit"
+      :per-page="itemsPerPage"
       :current-page="currentPage"
       @pagechanged="onPageChange"/>
     </div>
@@ -35,6 +35,7 @@ export default {
     return {
       asc: false,
       currentPage: 1,
+      itemsPerPage: 3,
       skip: 0,
       limit: 3,
     };
@@ -65,6 +66,13 @@ export default {
       this.currentPage = page;
       this.limit = page * 3;
       this.skip = this.limit - 3;
+    },
+  },
+  watch: {
+    reviews() {
+      this.limit = 3;
+      this.skip = 0;
+      this.currentPage = 1;
     },
   },
 };
