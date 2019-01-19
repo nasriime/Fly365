@@ -14,6 +14,7 @@
           @input="changeNights()" v-model="nights">
         </div>
         <span>Nights</span>
+        <span v-if="error" class="error ml-3">Nights should be between 1 and 99</span>
       </div>
       <!-- Gallery component -->
       <Gallery :pictures="hotelDetails.pictures"/>
@@ -42,6 +43,7 @@ export default {
     return {
       nights: this.$store.state.nights,
       hotelDetails: {},
+      error: false,
     };
   },
   methods: {
@@ -51,10 +53,12 @@ export default {
       this.hotelDetails = response.data;
     },
     changeNights() {
-      // Quick validate on the input 
+      // Quick validate on the input
       if (this.nights < 1 || this.nights > 99) {
+        this.error = true;
         return;
       }
+      this.error = false;
       // Send number of nights to the store
       this.$store.commit('changeNightsNumber', this.nights);
     },
@@ -87,5 +91,9 @@ h1{
   display: inline-block;
   width: 65px;
   background-color: #f8f8f8;
+}
+.error{
+  color: #dc3545;
+  font-size: 15px;
 }
 </style>
