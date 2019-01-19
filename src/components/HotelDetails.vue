@@ -11,7 +11,7 @@
         <span>For</span>
         <div class="form-group mx-2">
           <input class="form-control" type="number" min="1" max="99"
-          @input="changeNights()" @keypress="preventTyping($event)" v-model="nights">
+          @input="changeNights()" v-model="nights">
         </div>
         <span>Nights</span>
       </div>
@@ -48,10 +48,10 @@ export default {
       this.hotelDetails = response.data;
     },
     changeNights() {
+      if (this.nights < 1 || this.nights > 99) {
+        return;
+      }
       this.$store.commit('changeNightsNumber', this.nights);
-    },
-    preventTyping(e) {
-      e.preventDefault();
     },
   },
   computed: {

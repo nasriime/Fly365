@@ -5,8 +5,8 @@
       <i class="fas fa-circle-notch fa-spin fa-2x"></i>
     </div>
     <div v-else>
-      <h2>Reviews <i class="fa fa-sort" @click="toggleSort"></i></h2>
-      <ul class="reviews-wrapper p-3">
+      <h2 @click="toggleSort">Reviews <i class="fa fa-sort fa-xs"></i></h2>
+      <ul class="reviews-wrapper px-3 pt-3">
         <li class="review d-flex mb-4" v-for="(item, index) in orderedReviews" :key="index">
           <span class="review-score">{{ item.score }}</span>
           <p class="review-text">{{ item.review }}</p>
@@ -92,6 +92,9 @@ export default {
   color:#fff;
 }
 .review-text{
-  padding-top: 14px;
+  padding-top: 13px;
+}
+h2{
+  cursor: pointer;
 }
 </style>
