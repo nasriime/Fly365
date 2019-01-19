@@ -1,9 +1,13 @@
 <template>
   <div>
-    <span v-if="!hotelID">Hotels Details loading..... </span>
+    <div class="text-center" v-if="!hotelDetails">
+      <!-- Loader -->
+      <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+    </div>
     <div v-else>
       <h1 class="mb-3">{{hotelDetails.name}}</h1>
       <div>
+        <!-- number of nights indicator -->
         <span>For</span>
         <div class="form-group mx-2">
           <input class="form-control" type="number" min="1" max="99"

@@ -1,7 +1,10 @@
 <template>
-  <div>
-    <div v-if="!hotels">List of hotels Loading ....</div>
-    <div v-else class="row pt-5 mb-5">
+  <div class="hotelsList-wrapper">
+    <div class="text-center" v-if="!hotels">
+      <!-- Loader -->
+      <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+    </div>
+    <div v-else class="row py-5 my-5 px-3">
       <div v-for="(hotel, index) in hotels" :key="index" class="col-sm-4">
         <SingleHotel :hotel="hotel"/>
       </div>
@@ -38,5 +41,8 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+.hotelsList-wrapper {
+    background-color: #fff;
+    border-radius: 5px;
+}
 </style>

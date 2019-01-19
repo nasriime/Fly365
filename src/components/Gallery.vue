@@ -1,8 +1,11 @@
 <template>
-  <div class="text-center mb-5">
+  <div class="mb-5">
     <!-- loader -->
-    <div v-if="!pictures">Gallery is loading ........</div>
-    <div v-else>
+    <div class="text-center" v-if="!pictures">
+      <!-- Loader -->
+      <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+    </div>
+    <div class="text-center" v-else>
       <!-- Main Picture-->
       <img class="mainPhoto" :src="this.hotelPictures[currentPhoto].photo" alt="">
       <div class="row">

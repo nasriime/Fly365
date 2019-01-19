@@ -1,6 +1,9 @@
 <template>
   <div class="mt-5">
-    <div v-if="!reviews">reviews loading ......</div>
+    <div v-if="!reviews">
+      <!-- Loader -->
+      <i class="fas fa-circle-notch fa-spin fa-2x"></i>
+    </div>
     <div v-else>
       <h2>Reviews <i class="fa fa-sort" @click="toggleSort"></i></h2>
       <ul class="reviews-wrapper p-3">
