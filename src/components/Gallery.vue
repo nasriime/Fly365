@@ -44,6 +44,11 @@ export default {
       this.currentPhoto = idx;
     },
   },
+  watch: {
+    pictures() {
+      this.currentPhoto = 0;
+    },
+  },
 };
 </script>
 

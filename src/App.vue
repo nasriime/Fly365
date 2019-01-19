@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 body{
-  background-color: #f0f8ff !important;
+  background-color: #e3e7eb !important
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

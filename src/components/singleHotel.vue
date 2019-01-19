@@ -1,6 +1,7 @@
 <template>
-  <div class="single-hotel">
-    <a class="hotel-name" href="#" @click="emitHoteID($event, hotel.id)">{{ hotel.name }}</a>
+  <div class="single-hotel mb-5">
+    <a class="hotel-name" href="#" :class="{ active : currentID == hotel.id }"
+    @click="emitHoteID($event, hotel.id)">{{ hotel.name }}</a>
     <div class="hotel-data d-flex">
        <img :src="hotel.photo" alt="">
         <div>
@@ -19,6 +20,9 @@ export default {
     hotel: Object,
   },
   computed: {
+    currentID() {
+      return this.$store.state.hotelID;
+    },
     nights() {
       return this.$store.state.nights;
     },
@@ -80,6 +84,10 @@ export default {
 .hotel-name{
   display: inline-block;
   margin-bottom: 18px;
+  &.active{
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 .hotel-data{
   & > div{

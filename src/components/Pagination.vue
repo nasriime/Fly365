@@ -135,9 +135,9 @@ export default {
 </script>
 
 <style scoped lang="scss">
-// .pagination {
-//   list-style-type: none;
-// }
+.pagination {
+  margin-bottom: 50px;
+}
 // .pagination-item {
 //   display: inline-block;
 // }

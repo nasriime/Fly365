@@ -75,6 +75,7 @@ export default {
   list-style-type: none;
   border:1px solid #000;
   border-radius: 3px;
+  background-color: #f8f8f8;
 }
 .fa-sort{
   cursor: pointer;
@@ -87,6 +88,7 @@ export default {
   background-color:#9a9aad;
   margin: 0 20px 0 10px;
   border-radius: 50%;
+  color:#fff;
 }
 .review-text{
   padding-top: 14px;

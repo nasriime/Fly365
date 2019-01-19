@@ -41,8 +41,5 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.hotelsList-wrapper {
-    background-color: #fff;
-    border-radius: 5px;
-}
+
 </style>
