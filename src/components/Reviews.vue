@@ -6,19 +6,21 @@
     </div>
     <div v-else>
       <h2 @click="toggleSort">Reviews <i class="fa fa-sort fa-xs"></i></h2>
-      <ul class="reviews-wrapper px-3 pt-3">
-        <li class="review d-flex mb-4" v-for="(item, index) in orderedReviews" :key="index">
-          <span class="review-score">{{ item.score }}</span>
-          <p class="review-text">{{ item.review }}</p>
-        </li>
-      </ul>
+      <div class="reviews-wrapper px-3 py-3">
+        <ul class="reviews">
+          <li class="review d-flex mb-4" v-for="(item, index) in orderedReviews" :key="index">
+            <span class="review-score">{{ item.score }}</span>
+            <p class="review-text">{{ item.review }}</p>
+          </li>
+        </ul>
 
-       <Pagination
-      :total-pages="totalPages"
-      :total="totalReviews"
-      :per-page="itemsPerPage"
-      :current-page="currentPage"
-      @pagechanged="onPageChange"/>
+        <Pagination
+        :total-pages="totalPages"
+        :total="totalReviews"
+        :per-page="itemsPerPage"
+        :current-page="currentPage"
+        @pagechanged="onPageChange"/>
+      </div>
     </div>
 
 
@@ -84,7 +86,12 @@ export default {
   border:1px solid #000;
   border-radius: 3px;
   background-color: #f8f8f8;
-  min-height: 412px;
+  .reviews{
+    min-height: 412px;
+    @media(max-width: 576px){
+      padding-left: 0;
+    }
+  }
 }
 .fa-sort{
   cursor: pointer;

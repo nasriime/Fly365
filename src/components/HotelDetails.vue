@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="hotelDetails-wrapper p-1 p-sm-5 mb-5">
     <div class="text-center" v-if="!hotelDetails">
       <!-- Loader -->
       <i class="fas fa-circle-notch fa-spin fa-2x"></i>
@@ -15,9 +15,11 @@
         </div>
         <span>Nights</span>
       </div>
+      <!-- Gallery component -->
       <Gallery :pictures="hotelDetails.pictures"/>
       <div class="row">
         <div class="col-md-8 offset-md-2">
+          <!-- Reviews component -->
           <Reviews :reviews="hotelDetails.reviews"/>
         </div>
       </div>
@@ -69,6 +71,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.hotelDetails-wrapper{
+  border:1px solid #000;
+  border-radius: 5px;
+}
 h1{
   text-transform: capitalize;
 }

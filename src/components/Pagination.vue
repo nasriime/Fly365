@@ -136,7 +136,7 @@ export default {
 
 <style scoped lang="scss">
 .pagination {
-  margin-bottom: 130px;
+  // margin-bottom: 80px;
 }
 .active {
   background-color: #4AAE9B;

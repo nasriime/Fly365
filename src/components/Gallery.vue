@@ -69,7 +69,7 @@ export default {
     cursor: pointer;
 
     &.active{
-      border: 2px solid #5cb3fd;
+      border: 3px solid #5cb3fd;
     }
     & + img{
     margin-left: 10px;

@@ -1,11 +1,11 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
-import Home from '@/components/HotelsList.vue';
+import HotelsList from '@/components/HotelsList.vue';
 
 describe('HelloWorld.vue', () => {
   it('renders props.msg when passed', () => {
     const msg = 'new message';
-    const wrapper = shallowMount(Home, {
+    const wrapper = shallowMount(HotelsList, {
       propsData: { msg },
     });
     expect(wrapper.text()).to.include(msg);
