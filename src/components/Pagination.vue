@@ -1,6 +1,7 @@
 <template>
  <ul class="pagination d-flex justify-content-center">
     <li class="pagination-item">
+      <!-- First button -->
       <button
         type="button"
         class="btn btn-primary custom-btn"
@@ -11,6 +12,7 @@
     </li>
 
     <li class="pagination-item">
+      <!-- Previous button -->
       <button
         type="button"
         class="btn btn-primary custom-btn"
@@ -21,6 +23,7 @@
     </li>
 
     <li v-for="(page, index) in pages" :key="index" class="pagination-item">
+      <!-- Looping over pages buttons -->
       <button
         type="button"
         class="btn btn-primary custom-btn"
@@ -31,6 +34,7 @@
     </li>
 
     <li class="pagination-item">
+      <!-- Next button -->
       <button
         type="button"
         class="btn btn-primary custom-btn"
@@ -41,6 +45,7 @@
     </li>
 
     <li class="pagination-item">
+      <!-- Last button -->
       <button
         type="button"
         class="btn btn-primary custom-btn"
@@ -93,6 +98,7 @@ export default {
       return Math.min(this.startPage + this.maxVisibleButtons - 1, this.totalPages);
     },
     pages() {
+      // Generate visible buttons of pages
       const range = [];
 
       for (let i = this.startPage; i <= this.endPage; i += 1) {
@@ -105,9 +111,11 @@ export default {
       return range;
     },
     isInFirstPage() {
+      // Check if first page
       return this.currentPage === 1;
     },
     isInLastPage() {
+      // Check if last page
       return this.currentPage === this.totalPages;
     },
   },

@@ -46,23 +46,28 @@ export default {
   },
   methods: {
     async fetchHotelDetails(id) {
+      // Call the service to fetch hotel details
       const response = await HotelService.getHotel(id);
       this.hotelDetails = response.data;
     },
     changeNights() {
+      // Quick validate on the input 
       if (this.nights < 1 || this.nights > 99) {
         return;
       }
+      // Send number of nights to the store
       this.$store.commit('changeNightsNumber', this.nights);
     },
   },
   computed: {
     hotelID() {
+      // Observe changes on state
       return this.$store.state.hotelID;
     },
   },
   watch: {
     hotelID(id) {
+      // Watching the passed hotelID prop
       this.fetchHotelDetails(id);
     },
   },

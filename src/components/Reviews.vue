@@ -87,7 +87,7 @@ export default {
   border-radius: 3px;
   background-color: #f8f8f8;
   .reviews{
-    min-height: 412px;
+    min-height: 423px;
     @media(max-width: 576px){
       padding-left: 0;
     }

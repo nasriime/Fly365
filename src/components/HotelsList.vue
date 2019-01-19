@@ -7,6 +7,7 @@
     <div v-else class="row py-5">
       <div  v-for="(hotel, index) in hotels" :key="index"
         class="hotelsList-wrapper col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-0 col-lg-4">
+        <!-- looping over SingleHotel component -->
         <SingleHotel :hotel="hotel"/>
       </div>
     </div>
@@ -32,8 +33,10 @@ export default {
   },
   methods: {
     async fetchHotels() {
+      // Call get hotels from service 
       const response = await HotelService.getHotels();
       this.hotels = response.data;
+      // Initially send the first hotel's ID to the store
       const selectedID = this.hotels[0].id;
       this.$store.commit('changeHotelID', selectedID);
     },

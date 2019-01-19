@@ -1,4 +1,5 @@
 <template>
+  <!-- hotel card data -->
   <div class="single-hotel mb-5" @click="emitHoteID($event, hotel.id)"
     :class="{ active : currentID == hotel.id }">
     <a class="hotel-name" href="#" :class="{ active : currentID == hotel.id }">{{ hotel.name }}</a>
@@ -21,6 +22,7 @@ export default {
   },
   computed: {
     currentID() {
+      // Observe the hotelID state
       return this.$store.state.hotelID;
     },
     nights() {

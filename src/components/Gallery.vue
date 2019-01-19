@@ -36,16 +36,19 @@ export default {
   },
   computed: {
     hotelPictures() {
+      // Pass the coming array from props
       return this.pictures;
     },
   },
   methods: {
     changeCurrentPhoto(idx) {
+      // Make the index of the clicked photo to be currentPhoto 
       this.currentPhoto = idx;
     },
   },
   watch: {
     pictures() {
+      // reset to first photo when hotel changed
       this.currentPhoto = 0;
     },
   },
