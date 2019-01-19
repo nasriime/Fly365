@@ -4,7 +4,7 @@
     <div class="hotel-data d-flex">
        <img :src="hotel.photo" alt="">
         <div>
-          <p>{{ priceOfAllNights }} per {{ nights }} nights</p>
+          <p>{{ priceOfAllNights }} per {{ nights }} night</p>
           <p>{{ hotel.totalScore }} {{ calculatedGrade }}</p>
           <p>{{ hotel.totalReviews }} reviews</p>
         </div>

@@ -2,12 +2,15 @@
   <div>
     <span v-if="!hotelID">Hotels Details loading..... </span>
     <div v-else>
+      <h1 class="mb-5">{{hotelDetails.name}}</h1>
       <div>
         <span>for</span>
-        <input type="number" min="0" @input="changeNights()" v-model="nights">
+        <div class="form-group mx-2">
+          <input class="form-control" type="number" min="1" max="99"
+          @input="changeNights()" v-model="nights">
+        </div>
         <span>Nights</span>
       </div>
-      <div> Hotel Details loaded id {{ hotelID }} </div>
       <Gallery :pictures="hotelDetails.pictures"/>
       <Reviews :reviews="hotelDetails.reviews"/>
     </div>
@@ -55,5 +58,11 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+h1{
+  text-transform: capitalize;
+}
+.form-group{
+  display: inline-block;
+  width: 65px;
+}
 </style>
