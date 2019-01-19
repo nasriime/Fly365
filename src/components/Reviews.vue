@@ -76,6 +76,7 @@ export default {
   border:1px solid #000;
   border-radius: 3px;
   background-color: #f8f8f8;
+  min-height: 412px;
 }
 .fa-sort{
   cursor: pointer;

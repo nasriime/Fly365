@@ -136,11 +136,8 @@ export default {
 
 <style scoped lang="scss">
 .pagination {
-  margin-bottom: 50px;
+  margin-bottom: 130px;
 }
-// .pagination-item {
-//   display: inline-block;
-// }
 .active {
   background-color: #4AAE9B;
   color: #ffffff;

@@ -75,5 +75,6 @@ h1{
 .form-group{
   display: inline-block;
   width: 65px;
+  background-color: #f8f8f8;
 }
 </style>

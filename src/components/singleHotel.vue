@@ -75,15 +75,15 @@ export default {
 <style scoped lang="scss">
 .single-hotel{
   min-height: 225px;
-  border-radius: 4px;
+  border-radius: 5px;
   padding: 20px;
   background-color: #f8f8f8;
-  border-radius: 10%;
   box-shadow: 0px 10px 1px #ddd, 0 10px 20px #ccc;
 }
 .hotel-name{
   display: inline-block;
   margin-bottom: 18px;
+  text-decoration: none;
   &.active{
     font-size: 20px;
     font-weight: bold;
