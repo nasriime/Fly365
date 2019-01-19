@@ -1,7 +1,7 @@
 <template>
-  <div class="single-hotel mb-5" @click="emitHoteID($event, hotel.id)" :class="{ active : currentID == hotel.id }">
-    <a class="hotel-name" href="#" :class="{ active : currentID == hotel.id }"
-    >{{ hotel.name }}</a>
+  <div class="single-hotel mb-5" @click="emitHoteID($event, hotel.id)"
+    :class="{ active : currentID == hotel.id }">
+    <a class="hotel-name" href="#" :class="{ active : currentID == hotel.id }">{{ hotel.name }}</a>
     <div class="hotel-data d-flex">
        <img :src="hotel.photo" alt="">
         <div>
