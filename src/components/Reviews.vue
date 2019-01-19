@@ -59,7 +59,6 @@ export default {
       this.asc = !this.asc;
     },
     onPageChange(page) {
-      console.log(page);
       this.currentPage = page;
       this.limit = page * 3;
       this.skip = this.limit - 3;
@@ -69,16 +68,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.pagination {
-  list-style-type: none;
-}
-.pagination-item {
-  display: inline-block;
-}
-.active {
-  background-color: #4AAE9B;
-  color: #ffffff;
-}
 .reviews-wrapper{
   list-style-type: none;
   border:1px solid #000;

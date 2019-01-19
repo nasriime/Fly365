@@ -1,11 +1,14 @@
 <template>
   <div class="text-center mb-5">
+    <!-- loader -->
     <div v-if="!pictures">Gallery is loading ........</div>
     <div v-else>
+      <!-- Main Picture-->
       <img class="mainPhoto" :src="this.hotelPictures[currentPhoto].photo" alt="">
       <div class="row">
         <div class="col-md-6 offset-md-3">
           <div  class="images-wrapper d-flex mt-5">
+            <!-- looping over hotel's pictures -->
             <img  v-for="(item,index) in hotelPictures" :key="index" :src="item.thumbnail"
               :class="{ active : currentPhoto == index }"
               @click="changeCurrentPhoto(index)" alt="">
@@ -49,12 +52,8 @@ export default {
   @media(max-width:480px){
     width:100%;
   }
-
 }
 .images-wrapper{
-  // display:flex;
-  // // width:539px;
-  // // margin:0 auto;
   overflow-y: auto;
 }
 .images-wrapper {

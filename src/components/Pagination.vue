@@ -1,64 +1,52 @@
 <template>
- <ul class="pagination">
-    <li
-      class="pagination-item"
-    >
+ <ul class="pagination d-flex justify-content-center">
+    <li class="pagination-item">
       <button
         type="button"
+        class="btn btn-primary custom-btn"
         @click="onClickFirstPage"
         :disabled="isInFirstPage"
         aria-label="Go to first page"
-      >
-        First
-      </button>
+      ><i class='fas fa-angle-double-left'></i></button>
     </li>
 
-    <li
-      class="pagination-item"
-    >
+    <li class="pagination-item">
       <button
         type="button"
+        class="btn btn-primary custom-btn"
         @click="onClickPreviousPage"
         :disabled="isInFirstPage"
         aria-label="Go to previous page"
-      >
-        Previous
-      </button>
+      ><i class='fas fa-angle-left'></i></button>
     </li>
 
     <li v-for="(page, index) in pages" :key="index" class="pagination-item">
       <button
         type="button"
+        class="btn btn-primary custom-btn"
         @click="onClickPage(page.name)"
         :disabled="page.isDisabled"
         :class="{ active: isPageActive(page.name) }"
-        :aria-label="`Go to page number ${page.name}`"
-
-      >
-        {{ page.name }}
-      </button>
+        :aria-label="`Go to page number ${page.name}`">{{ page.name }}</button>
     </li>
 
     <li class="pagination-item">
       <button
         type="button"
+        class="btn btn-primary custom-btn"
         @click="onClickNextPage"
         :disabled="isInLastPage"
         aria-label="Go to next page"
-      >
-        Next
-      </button>
+      ><i class='fas fa-angle-right'></i></button>
     </li>
 
     <li class="pagination-item">
       <button
         type="button"
+        class="btn btn-primary custom-btn"
         @click="onClickLastPage"
         :disabled="isInLastPage"
-        aria-label="Go to last page"
-      >
-        Last
-      </button>
+        aria-label="Go to last page"><i class='fas fa-angle-double-right'></i></button>
     </li>
   </ul>
 </template>
@@ -147,5 +135,20 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
+// .pagination {
+//   list-style-type: none;
+// }
+// .pagination-item {
+//   display: inline-block;
+// }
+.active {
+  background-color: #4AAE9B;
+  color: #ffffff;
+}
+  .custom-btn{
+    border-radius: unset;
+  }
+  li +li {
+    border-left: 1px solid #fff;
+  }
 </style>
