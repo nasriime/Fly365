@@ -1,13 +1,18 @@
 <template>
-  <div class="text-center">
+  <div class="text-center mb-5">
     <div v-if="!pictures">Gallery is loading ........</div>
     <div v-else>
       <img class="mainPhoto" :src="this.hotelPictures[currentPhoto].photo" alt="">
-      <div  class="images-wrapper mt-5">
-        <img  v-for="(item,index) in hotelPictures" :key="index" :src="item.thumbnail"
-        :class="{ active : currentPhoto == index }"
-        @click="changeCurrentPhoto(index)" alt="">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <div  class="images-wrapper d-flex mt-5">
+            <img  v-for="(item,index) in hotelPictures" :key="index" :src="item.thumbnail"
+              :class="{ active : currentPhoto == index }"
+              @click="changeCurrentPhoto(index)" alt="">
+          </div>
+        </div>
       </div>
+
     </div>
   </div>
 </template>
@@ -41,12 +46,15 @@ export default {
   height:300px;
   border: 5px solid #d1d4d6;
   border-radius: 3px;
+  @media(max-width:480px){
+    width:100%;
+  }
 
 }
 .images-wrapper{
-  display:flex;
-  width:539px;
-  margin:0 auto;
+  // display:flex;
+  // // width:539px;
+  // // margin:0 auto;
   overflow-y: auto;
 }
 .images-wrapper {

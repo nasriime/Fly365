@@ -1,15 +1,12 @@
 <template>
-  <div>
-    <div>
-      <span>Reviews</span>
-      <button @click="toggleSort">Toggle sort</button>
-    </div>
+  <div class="mt-5">
     <div v-if="!reviews">reviews loading ......</div>
     <div v-else>
-      <ul>
-        <li v-for="(item, index) in orderedReviews" :key="index">
-          <!-- {{ item.review }} -->
-          {{ item.score }}
+      <h2>Reviews <i class="fa fa-sort" @click="toggleSort"></i></h2>
+      <ul class="reviews-wrapper p-3">
+        <li class="review d-flex mb-4" v-for="(item, index) in orderedReviews" :key="index">
+          <span class="review-score">{{ item.score }}</span>
+          <p class="review-text">{{ item.review }}</p>
         </li>
       </ul>
 
@@ -75,13 +72,31 @@ export default {
 .pagination {
   list-style-type: none;
 }
-
 .pagination-item {
   display: inline-block;
 }
-
 .active {
   background-color: #4AAE9B;
   color: #ffffff;
+}
+.reviews-wrapper{
+  list-style-type: none;
+  border:1px solid #000;
+  border-radius: 3px;
+}
+.fa-sort{
+  cursor: pointer;
+}
+.review-score{
+  min-width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  background-color:#9a9aad;
+  margin: 0 20px 0 10px;
+  border-radius: 50%;
+}
+.review-text{
+  padding-top: 14px;
 }
 </style>

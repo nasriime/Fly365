@@ -2,9 +2,9 @@
   <div>
     <span v-if="!hotelID">Hotels Details loading..... </span>
     <div v-else>
-      <h1 class="mb-5">{{hotelDetails.name}}</h1>
+      <h1 class="mb-3">{{hotelDetails.name}}</h1>
       <div>
-        <span>for</span>
+        <span>For</span>
         <div class="form-group mx-2">
           <input class="form-control" type="number" min="1" max="99"
           @input="changeNights()" v-model="nights">
@@ -12,7 +12,11 @@
         <span>Nights</span>
       </div>
       <Gallery :pictures="hotelDetails.pictures"/>
-      <Reviews :reviews="hotelDetails.reviews"/>
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <Reviews :reviews="hotelDetails.reviews"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
