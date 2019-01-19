@@ -15,7 +15,7 @@
 
 <script>
 export default {
-  name: 'singleHotel',
+  name: 'SingleHotel',
   props: {
     hotel: Object,
   },
@@ -46,7 +46,7 @@ export default {
     // Assign scores to range of grades
     calculateGrades(score) {
       let grade;
-      const grades = ['Very bad', 'bad', 'good', 'Very good', 'Excellent'];
+      const grades = ['Very bad', 'bad', 'good', 'Very good', 'Excellent', 'N/A'];
       switch (true) {
         case score > 0 && score <= 3:
           grade = grades[0];
@@ -64,7 +64,7 @@ export default {
           grade = grades[4];
           break;
         default:
-          grade = grades[4];
+          grade = grades[5];
       }
       return grade;
     },
