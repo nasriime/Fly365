@@ -5,7 +5,7 @@
       <i class="fas fa-circle-notch fa-spin fa-2x"></i>
     </div>
     <div v-else>
-      <h2 @click="toggleSort">Reviews <i class="fa fa-sort fa-xs"></i></h2>
+      <h2 class="mb-3" @click="toggleSort">Reviews <i class="fa fa-sort fa-xs"></i></h2>
       <div class="reviews-wrapper px-3 py-3">
         <ul class="reviews">
           <li class="review d-flex mb-4" v-for="(item, index) in orderedReviews" :key="index">
@@ -88,9 +88,7 @@ export default {
   background-color: #f8f8f8;
   .reviews{
     min-height: 423px;
-    @media(max-width: 576px){
-      padding-left: 0;
-    }
+    padding-left: 0;
   }
 }
 .fa-sort{

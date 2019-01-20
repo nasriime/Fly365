@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     changeCurrentPhoto(idx) {
-      // Make the index of the clicked photo to be currentPhoto 
+      // Make the index of the clicked photo to be currentPhoto
       this.currentPhoto = idx;
     },
   },

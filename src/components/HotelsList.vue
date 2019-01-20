@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     async fetchHotels() {
-      // Call get hotels from service 
+      // Call get hotels from service
       const response = await HotelService.getHotels();
       this.hotels = response.data;
       // Initially send the first hotel's ID to the store

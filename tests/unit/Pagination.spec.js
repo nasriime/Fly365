@@ -1,13 +1,28 @@
 import { expect } from 'chai';
 import { shallowMount } from '@vue/test-utils';
-import Home from '@/components/Pagination.vue';
+import Pagination from '@/components/Pagination.vue';
 
-describe('HelloWorld.vue', () => {
+describe('Pagination.vue', () => {
   it('renders props.msg when passed', () => {
-    const msg = 'new message';
-    const wrapper = shallowMount(Home, {
-      propsData: { msg },
+    const maxVisibleButtons = 3;
+    const totalPages = 6;
+    const total = 16;
+    const perPage = 3;
+    const currentPage = 1;
+    const wrapper = shallowMount(Pagination, {
+      propsData: {
+        maxVisibleButtons, totalPages, total, perPage, currentPage,
+      },
     });
-    expect(wrapper.text()).to.include(msg);
+    expect(wrapper.vm.startPage).toBe(1);
+  });
+
+  it('check onClickPage method', () => {
+    const wrapper = shallowMount(Pagination);
+    expect(wrapper.vm.startPage).toBe(1);
+    expect(wrapper.vm.endPage).toBe(1);
+    wrapper.vm.onClickPage(3);
+    expect(wrapper.vm.startPage).toBe(1);
+    expect(wrapper.vm.endPage).toBe(1);
   });
 });

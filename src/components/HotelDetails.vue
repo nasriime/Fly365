@@ -14,6 +14,8 @@
           @input="changeNights()" v-model="nights">
         </div>
         <span>Nights</span>
+      </div>
+      <div class="error-wrapper mb-4">
         <span v-if="error" class="error ml-3">Nights should be between 1 and 99</span>
       </div>
       <!-- Gallery component -->
@@ -91,6 +93,9 @@ h1{
   display: inline-block;
   width: 65px;
   background-color: #f8f8f8;
+}
+.error-wrapper{
+  height: 13px;
 }
 .error{
   color: #dc3545;

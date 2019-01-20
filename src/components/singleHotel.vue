@@ -3,7 +3,7 @@
   <div class="single-hotel mb-5" @click="emitHoteID($event, hotel.id)"
     :class="{ active : currentID == hotel.id }">
     <a class="hotel-name" href="#" :class="{ active : currentID == hotel.id }">{{ hotel.name }}</a>
-    <div class="hotel-data d-flex">
+    <div class="hotel-data d-flex justify-content-center justify-content-sm-start">
        <img :src="hotel.photo" alt="">
         <div>
           <p>{{ priceOfAllNights }} per {{ nights }} night</p>
@@ -100,9 +100,9 @@ export default {
     margin-top: 12px;
   }
   img{
-  margin-right: 15px;
-  height: 81px;
-  margin-top: 20px;
+    margin-right: 15px;
+    height: 86px;
+    margin-top: 20px;
   }
 }
 </style>

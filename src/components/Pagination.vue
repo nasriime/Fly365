@@ -143,9 +143,6 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.pagination {
-  // margin-bottom: 80px;
-}
 .active {
   background-color: #4AAE9B;
   color: #ffffff;
