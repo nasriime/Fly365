@@ -11,14 +11,14 @@ describe('Gallery.vue', () => {
     const wrapper = shallowMount(Gallery, {
       propsData: { pictures },
     });
-    expect(wrapper.vm.currentPhoto).toBe(0);
-    expect(wrapper.hotelPictures).to.be.an('array');
+    expect(wrapper.vm.currentPhoto).to.equal(0);
+    expect(wrapper.hotelPictures).to.equal.an('array');
   });
 
   it('check changeCurrentPhoto method', () => {
     const wrapper = shallowMount(Gallery);
-    expect(wrapper.vm.currentPhoto).toBe(0);
+    expect(wrapper.vm.currentPhoto).to.equal(0);
     wrapper.vm.changeCurrentPhoto(1);
-    expect(wrapper.vm.currentPhoto).toBe(1);
+    expect(wrapper.vm.currentPhoto).to.equal(1);
   });
 });

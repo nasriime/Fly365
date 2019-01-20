@@ -13,8 +13,8 @@ describe('Reviews.vue', () => {
 
   it('check toggleSort method', () => {
     const wrapper = shallowMount(Reviews);
-    expect(wrapper.vm.asc).toBe(0);
+    expect(wrapper.vm.asc).to.equal(0);
     wrapper.vm.changeCurrentPhoto(false);
-    expect(wrapper.vm.asc).toBe(true);
+    expect(wrapper.vm.asc).to.equal(true);
   });
 });
